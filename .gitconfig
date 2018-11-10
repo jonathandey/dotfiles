@@ -22,8 +22,8 @@
 	changed = green
 	untracked = cyan
 [user]
-	name = Russ Mckendrick
-	email = russ@mckendrick.io
+	name = Jonathan Dey
+	email = jon@jrd.io
 [filter "media"]
 	required = true
 	clean = git media clean %f
@@ -35,8 +35,6 @@
 	smudge = git-lfs smudge -- %f
 	process = git-lfs filter-process
 	required = true
-[commit]
-	template = ~/.stCommitMsg
 [credential]
 	helper = osxkeychain
 [difftool "Kaleidoscope"]
