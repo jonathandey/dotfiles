@@ -7,11 +7,11 @@ alias v='open -a "Sublime Text"'
 alias a='open -a "Sublime Text"'
 
 # Terraform
-tg() { terraform graph $1 | dot -Tpng > $1/graph.png; }
-tp() { terraform plan -state=$1/terraform.tfstate $1; }
-ts() { terraform show $1/terraform.tfstate; }
-ta() { terraform apply -state=$1/terraform.tfstate $1; }
-tdestroy() { terraform destroy -state=$1/terraform.tfstate $1; }
+#tg() { terraform graph $1 | dot -Tpng > $1/graph.png; }
+#tp() { terraform plan -state=$1/terraform.tfstate $1; }
+#ts() { terraform show $1/terraform.tfstate; }
+#ta() { terraform apply -state=$1/terraform.tfstate $1; }
+#tdestroy() { terraform destroy -state=$1/terraform.tfstate $1; }
 
 # Docker Machine
 # alias dml="docker-machine ls"
@@ -45,24 +45,23 @@ alias .....="cd ../../../.."
 alias tree="tree -I '.git'"
 
 # Shortcuts to my Code folder in my home directory
-alias cod="cd ~/Documents/Code/"
+alias proj="cd ~/Projects/"
 alias dt="cd ~/.dotfiles/"
-alias pkt=" cd ~/Documents/Packt\ Work/"
 
 # Vagrant aliases
-alias vup="vagrant up"
-alias vh="vagrant halt"
-alias vs="vagrant suspend"
-alias vr="vagrant resume"
-alias vp="vagrant provision"
-alias vd="vagrant destroy"
-alias vrld="vagrant reload"
-alias vssh="vagrant ssh"
-alias vstat="vagrant global-status"
+#alias vup="vagrant up"
+#alias vh="vagrant halt"
+#alias vs="vagrant suspend"
+#alias vr="vagrant resume"
+#alias vp="vagrant provision"
+#alias vd="vagrant destroy"
+#alias vrld="vagrant reload"
+#alias vssh="vagrant ssh"
+#alias vstat="vagrant global-status"
 
 # Enable aliases to be sudo’ed
 alias sudo='sudo '
-alias hoste='sudo atom /private/etc/hosts'
+alias hoste='sudo sublime /etc/hosts'
 
 # Colored up cat!
 # You must install Pygments first - "sudo easy_install Pygments"
@@ -87,12 +86,12 @@ alias gpu='git pull'
 # alias drmc="docker rm $(docker ps -a -q)"
 
 # Some defaults and paths
-export PATH=/usr/local/bin:~/.local/lib/aws/bin:/usr/local/sbin:~/Library/Python/2.7/bin:$PATH
+#export PATH=/usr/local/bin:~/.local/lib/aws/bin:/usr/local/sbin:~/Library/Python/2.7/bin:$PATH
 export PATH=$PATH:/usr/local/go/bin
 export HOMEBREW_CASK_OPTS="--appdir=/Applications"
-export ANSIBLE_SSH_CONTROL_PATH='/tmp/%%h-%%p-%%r'
-export ANSIBLE_HOST_KEY_CHECKING=False
-export ANSIBLE_LOG_PATH="/var/log/ansible.log"
+#export ANSIBLE_SSH_CONTROL_PATH='/tmp/%%h-%%p-%%r'
+#export ANSIBLE_HOST_KEY_CHECKING=False
+#export ANSIBLE_LOG_PATH="/var/log/ansible.log"
 export OBJC_DISABLE_INITIALIZE_FORK_SAFETY=YES
 
 # Fix an issue with pyton bombing out when using WinRM
@@ -144,7 +143,7 @@ export RESET
 
 # Git branch details
 function parse_git_dirty() {
-	[[ $(git status 2> /dev/null | tail -n1) != *"working directory clean"* ]] && echo "*"
+	[[ $(git status 2> /dev/null | tail -n1) != *"working tree clean"* ]] && echo "*"
 }
 function parse_git_branch() {
 	git branch --no-color 2> /dev/null | sed -e '/^[^*]/d' -e "s/* \(.*\)/\1$(parse_git_dirty)/"
